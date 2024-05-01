@@ -11,10 +11,11 @@
         $Email=$_POST['email'];
         $DOB=$_POST['dob'];
         $Mobile=$_POST['mobile'];
+        $Type="user_type";
         
         if(!empty($Email) && !empty($Password) && !is_numeric($Email)){
             
-            $query ="INSERT INTO user(fullname, username, password, nic, address, email, dob, mobile) VALUES('$Fullname', '$UserName', '$Password', '$NIC', '$Address', '$Email', '$DOB', '$Mobile')";
+            $query ="INSERT INTO user(fullname, username, password, nic, address, email, dob, mobile,type) VALUES('$Fullname', '$UserName', '$Password', '$NIC', '$Address', '$Email', '$DOB', '$Mobile','$Type')";
             
             mysqli_query($conn, $query);
             echo "<script type='text/javascript'>alert('Successfully Registered'); window.location.href = 'logIn.php';</script>";
