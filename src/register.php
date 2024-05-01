@@ -1,10 +1,9 @@
 <?php
-	session_start();
-
+    session_start();
     include("./config/database.php");
 
-	if($_SERVER['REQUEST_METHOD']=="POST"){
-		$Fullname=$_POST['fullname'];
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+        $Fullname=$_POST['fullname'];
         $UserName=$_POST['username'];
         $Password=$_POST['password'];
         $NIC=$_POST['nic'];
@@ -12,20 +11,19 @@
         $Email=$_POST['email'];
         $DOB=$_POST['dob'];
         $Mobile=$_POST['mobile'];
-		
-		if(!empty($Email) && !empty($Password) && !is_numeric($Email)){
-			
-			$query ="INSERT INTO user(fullname, username, password, nic, address, email, dob, mobile) VALUES('$Fullname', '$UserName', '$Password', '$NIC', '$Address', '$Email', '$DOB', '$Mobile')";
-			
-			mysqli_query($conn, $query);
-			echo "<script type='text/javascript'>alert('Successfully Registered')</script>";
-			header("Location: logIn.php");
-			exit; // Ensure no further output after redirection
-		}
-		else{
-			echo "<script type='text/javascript'>alert('Please Enter some Valid Details')</script>";
-		}
-	}
+        
+        if(!empty($Email) && !empty($Password) && !is_numeric($Email)){
+            
+            $query ="INSERT INTO user(fullname, username, password, nic, address, email, dob, mobile) VALUES('$Fullname', '$UserName', '$Password', '$NIC', '$Address', '$Email', '$DOB', '$Mobile')";
+            
+            mysqli_query($conn, $query);
+            echo "<script type='text/javascript'>alert('Successfully Registered'); window.location.href = 'logIn.php';</script>";
+            exit; // Ensure no further output after redirection
+        }
+        else{
+            echo "<script type='text/javascript'>alert('Please Enter some Valid Details');</script>";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +33,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
     <link rel="stylesheet" href="./style/register.css"/>
+    <script>
+        function goToLogin() {
+            window.location.href = 'logIn.php';
+        }
+    </script>
 </head>
 <body>
     <form method="post" action="">
@@ -80,7 +83,7 @@
                  </tr>
                  <tr>
                      <td><label><b>Already have an account:</b></label></td>
-                     <td><button class="button1" type="submit" name="login">Login</button><br></td>
+                     <td><button class="button1" type="button" onclick="goToLogin()">Login</button><br></td>
                  </tr>
               </table> 
             </div1>
