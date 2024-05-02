@@ -24,38 +24,37 @@ if ($result && mysqli_num_rows($result) > 0) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $fullname = $_POST['fullname'];
     $username = $_POST['username'];
+    $password = $_POST['password'];
     $nic = $_POST['nic'];
     $address = $_POST['address'];
     $email = $_POST['email'];
     $dob = $_POST['dob'];
     $mobile = $_POST['mobile'];
-    
-
-    // Sanitize inputs (You can use additional validation if needed)
-
-    $name = mysqli_real_escape_string($conn, $name);
-    $email = mysqli_real_escape_string($conn, $email);
-    $mobile = mysqli_real_escape_string($conn, $mobile);
 
     // Update the user's details in the database
 
-    $query = "UPDATE user SET fullname='$fullname', username='$username', nic='$nic',address='$address', email='$email', dob='$dob', mobile='$mobile',  WHERE ID='$user_id'";
+    $query = "UPDATE user SET fullname='$fullname', username='$username', password='$password', nic='$nic', address='$address', email='$email', dob='$dob', mobile='$mobile' WHERE ID='$user_id'";
     $result = mysqli_query($conn, $query);
 
-    if ($result) 
-    {
-        $user['fullname'] = $fullname;
-        $user['username'] = $username;
-        $user['nic'] = $nic;
-        $user['address'] = $address;
-        $user['email'] = $email;
-        $user['dob'] = $dob;
-        $user['mobile'] = $mobile;    
-	
+    if ($result) {
+        // Update user data in session
+        $_SESSION['user']['fullname'] = $fullname;
+        $_SESSION['user']['username'] = $username;
+        $_SESSION['user']['password'] = $password;
+        $_SESSION['user']['nic'] = $nic;
+        $_SESSION['user']['address'] = $address;
+        $_SESSION['user']['email'] = $email;
+        $_SESSION['user']['dob'] = $dob;
+        $_SESSION['user']['mobile'] = $mobile;
+
+        // Redirect to profile page or any other page
+        header('Location: userProfile.php');
+        exit;
+    } else {
+        echo "Error updating record: " . mysqli_error($conn);
     }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,16 +67,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <div class="container">
         <h2>User Profile</h2>
-        <center><img src="./images/userprofile.jpeg" alt="Italian Trulli">
-        </center>
-        <form>
+        <center><img src="./images/userprofile.jpeg" alt="User Profile"></center>
+        <form action="" method="POST">
             <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" value="<?php echo $user['fullname']; ?>" readonly>
+                <label for="fullname">Name:</label>
+                <input type="text" id="fullname" name="fullname" value="<?php echo $user['fullname']; ?>" readonly>
             </div>
             <div class="form-group">
-                <label for="address">User Name:</label>
+                <label for="username">User Name:</label>
                 <input type="text" id="username" name="username" value="<?php echo $user['username']; ?>" readonly>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" value="<?php echo $user['password']; ?>" readonly>
             </div>
             <div class="form-group">
                 <label for="nic">NIC:</label>
@@ -100,30 +102,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="tel" id="mobile" name="mobile" value="<?php echo $user['mobile']; ?>" readonly>
             </div>
             <div class="button-group">
-                <button class="edit-button">Edit</button>
+                <button type="button" class="edit-button" onclick="enableEdit()">Edit</button>
+                <button type="submit" class="save-button" style="display: none;">Save</button>
                 <br/>
-                <button class="delete-button">Delete</button>
+                <a href="deleteUser.php" class="dbutton" >Delete Account</a>
+                
             </div>
         </form>
-        
+        <div id="notification"></div>
     </div>
-</body>
-<script>
-    function confirmDelete() {
-        if (confirm('Are you sure you want to delete the user profile?')) {
-            // Code to delete the user profile
-            showNotification('User profile deleted successfully!', 'success');
-        }
-    }
 
-    function showNotification(message, type) {
-        const notification = document.getElementById('notification');
-        notification.textContent = message;
-        notification.classList.add(type);
-        setTimeout(() => {
-            notification.textContent = '';
-            notification.classList.remove(type);
-        }, 3000); // Remove notification after 3 seconds
-    }
-</script>
+    <script>
+        function enableEdit() {
+            const inputs = document.querySelectorAll('input[readonly]');
+            inputs.forEach(input => {
+                input.removeAttribute('readonly');
+            });
+
+            // Hide edit button, show save button
+            document.querySelector('.edit-button').style.display = 'none';
+            document.querySelector('.save-button').style.display = 'block';
+        }
+
+      
+        function showNotification(message, type) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.classList.add(type);
+            setTimeout(() => {
+                notification.textContent = '';
+                notification.classList.remove(type);
+            }, 3000); // Remove notification after 3 seconds
+        }
+    </script>
+</body>
 </html>
