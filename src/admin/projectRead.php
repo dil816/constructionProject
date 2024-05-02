@@ -28,6 +28,7 @@ $result = $conn->query($sql);
                     <th>Total Budget (M)</th>
                     <th>Client ContactNo</th>
                     <th>Start Date</th>
+                    <th>Project Plan</th>
                     <th>Update</th>
                     <th>Delete</th>
                 </tr>
@@ -47,6 +48,7 @@ $result = $conn->query($sql);
                             <td><?php echo $row['budget']; ?></td>
                             <td><?php echo $row['contactNo']; ?></td>
                             <td><?php echo $row['projectStart']; ?></td>
+                            <td><?php echo $row['filename']; ?></td>
                             <td><a class="update" href="projectupdate.php?Project_ID=<?php echo $row['Project_ID']; ?>">update</a></td>
                             <td><a class="delete" href="projectdelete.php?Project_ID=<?php echo $row['Project_ID']; ?>">delete</a></td>
 
@@ -59,9 +61,8 @@ $result = $conn->query($sql);
         </tr>
     </table>
     <br>
-
-    <a href="projectCreate.php" class="btn">Add Project</a>
-
+    <a href="projectCreate.php" class="btn1">Add Project</a>
+    <a href="projectDocuments.php" class="btn2">view Plans</a>
 </body>
 
 </html>

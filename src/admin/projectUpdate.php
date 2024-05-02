@@ -10,14 +10,17 @@ if (isset($_POST['update'])) {
     $contactNo = $_POST['contactNo'];
     $projectStart = $_POST['projectStart'];
     $project_id = $_POST['project_id'];
+    $filename = $_FILES["imgfile"]["name"];
+    $tempname = $_FILES["imgfile"]["tmp_name"];
+    $image = "../images/projectimage/" . $filename;
 
     $sql = "UPDATE projects SET pName ='$pName', pDescription = '$pDescription', pManager = '$pManager',
-            cName = '$cName', budget = '$budget', contactNo = '$contactNo', projectStart = '$projectStart'
-            WHERE Project_ID = '$project_id'";
+            cName = '$cName', budget = '$budget', contactNo = '$contactNo', projectStart = '$projectStart', 
+            filename = '$filename' WHERE Project_ID = '$project_id'";
 
     $result = $conn->query($sql);
 
-    if ($result == TRUE) {
+    if ($result == TRUE && move_uploaded_file($tempname, $image)) {
         echo "Record update suceesfully!";
         header('Location: projectRead.php');
     } else {
@@ -41,6 +44,7 @@ if (isset($_GET['Project_ID'])) {
             $budget = $row['budget'];
             $contactNo = $row['contactNo'];
             $projectStart = $row['projectStart'];
+            $filename = $row['filename'];
             $Project_ID = $row['Project_ID'];
         }
 ?>
@@ -58,7 +62,7 @@ if (isset($_GET['Project_ID'])) {
         <body>
             <div class="container">
                 <h1 class="form-title">Project Update</h1>
-                <form action="projectUpdate.php" method="post">
+                <form action="projectUpdate.php" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="project_id" value="<?php echo $Project_ID; ?>">
                     <div class="main-user-info">
                         <div class="user-input-box">
@@ -88,6 +92,10 @@ if (isset($_GET['Project_ID'])) {
                         <div class="user-input-box">
                             <label for="client-contact">Client Contact Number</label>
                             <input type="tel" id="client-contact" name="contactNo" value="<?php echo $contactNo; ?>" placeholder="Enter Contact Number" />
+                        </div>
+                        <div class="user-input-box">
+                            <label for="client-contact">Project plan(images)</label>
+                            <input class="image" type="file" name="imgfile"><span><?php echo $filename; ?></span>
                         </div>
                     </div>
                     <div class="form-submit-btn">

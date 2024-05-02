@@ -9,13 +9,16 @@ if (isset($_POST['submit'])) {
     $budget = $_POST['budget'];
     $contactNo = $_POST['contactNo'];
     $projectStart = $_POST['projectStart'];
+    $filename = $_FILES["imgfile"]["name"];
+    $tempname = $_FILES["imgfile"]["tmp_name"];
+    $image = "../images/projectimage/" . $filename;
 
-    $sql = "INSERT INTO projects (pName,pDescription,pManager,cName,budget,contactNo,projectStart)
-    VALUES ('$pName','$pDescription','$pManager','$cName','$budget','$contactNo','$projectStart')";
+    $sql = "INSERT INTO projects (pName,pDescription,pManager,cName,budget,contactNo,projectStart,filename)
+    VALUES ('$pName','$pDescription','$pManager','$cName','$budget','$contactNo','$projectStart','$filename')";
 
     $results = $conn->query($sql);
 
-    if ($results == TRUE) {
+    if ($results == TRUE && move_uploaded_file($tempname, $image)) {
         echo "user added";
         header('Location: projectRead.php');
     } else {
@@ -39,7 +42,7 @@ if (isset($_POST['submit'])) {
 <body>
     <div class="container">
         <h1 class="form-title">Project Create</h1>
-        <form action="projectCreate.php" method="post">
+        <form action="projectCreate.php" method="post" enctype="multipart/form-data">
             <div class="main-user-info">
                 <div class="user-input-box">
                     <label for="fname">Project name</label>
@@ -69,6 +72,11 @@ if (isset($_POST['submit'])) {
                     <label for="client-contact">Client Contact Number</label>
                     <input type="tel" id="client-contact" name="contactNo" placeholder="Enter Contact Number" />
                 </div>
+                <div class="user-input-box">
+                    <label for="client-contact">Project plan(images)</label>
+                    <input class="image" type="file" name="imgfile" value="">
+                </div>
+
             </div>
             <div class="form-submit-btn">
                 <input type="submit" value="Submit" name="submit" />
