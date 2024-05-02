@@ -1,0 +1,84 @@
+* {
+  margin: 5px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+h1 {
+  text-align: center;
+  padding-top: 10px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.update {
+  background-color: rgb(26, 231, 36);
+  color: black;
+  border: 2px solid #065814;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.update:hover,
+.update:active {
+  background-color: rgb(16, 117, 21);
+  color: white;
+}
+
+.delete {
+  background-color: rgb(231, 26, 26);
+  color: black;
+  border: 2px solid #580606;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.delete:hover,
+.delete:active {
+  background-color: rgb(117, 16, 16);
+  color: white;
+}
+
+.btn {
+  background-color: #ffff00;
+  color: black;
+  border: 2px solid #96960f;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: rgb(117, 16, 16);
+  color: white;
+}
+/**************/
