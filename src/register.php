@@ -11,7 +11,7 @@
         $Email=$_POST['email'];
         $DOB=$_POST['dob'];
         $Mobile=$_POST['mobile'];
-        $Type="user";
+        $Type=$_POST['roles'];
         
         if(!empty($Email) && !empty($Password) && !is_numeric($Email)){
             
@@ -70,6 +70,19 @@
                     <td><label><b>E-mail:</b></lable></td>
                     <td><input type="email" name="email" size="40" placeholder="janithasuranjana2001@gmail.com" required autocomplete="off"><br></td>
                  </tr>
+                 <tr>
+                  <td><label><b>Roles:</b></label></td>
+                  <td>
+                      <select name="roles" required>
+                          <option value="" disabled selected>Select your Role</option>
+                          
+                          <option value="pmanager">Project Manager</option>
+                          <option value="engineer">Engineer</option>
+                          <option value="accountant">Accountant</option>
+                          <option value="subcontracter">Subcontracter</option>
+                      </select>
+                  </td>
+              </tr
                  <tr>
                     <td><label><b>Date of birth:</b></lable></td>
                     <td><input type="date" name="dob" required autocomplete="off"><br></td>
