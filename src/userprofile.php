@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <button type="button" class="edit-button" onclick="enableEdit()">Edit</button>
                 <button type="submit" class="save-button" style="display: none;">Save</button>
                 <br/>
-                <a href="deleteUser.php" class="dbutton" >Delete Account</a>
+                <button type="button" class="delete-button" onclick="enableDelete()">Delete Account</button>
                 
             </div>
         </form>
@@ -123,6 +123,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             document.querySelector('.edit-button').style.display = 'none';
             document.querySelector('.save-button').style.display = 'block';
         }
+        function enableDelete() {
+        window.location.href = 'deleteuser.php'; // Corrected 'login.php' to 'login.php'
+    }
 
       
         function showNotification(message, type) {

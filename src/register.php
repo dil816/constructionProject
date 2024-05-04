@@ -11,11 +11,11 @@
         $Email=$_POST['email'];
         $DOB=$_POST['dob'];
         $Mobile=$_POST['mobile'];
-        $Type="user_type";
+        $Type="user";
         
         if(!empty($Email) && !empty($Password) && !is_numeric($Email)){
             
-            $query ="INSERT INTO user(fullname, username, password, nic, address, email, dob, mobile,type) VALUES('$Fullname', '$UserName', '$Password', '$NIC', '$Address', '$Email', '$DOB', '$Mobile','$Type')";
+            $query ="INSERT INTO user(fullname, username, password, nic, address, email, dob, mobile,user_type) VALUES('$Fullname', '$UserName', '$Password', '$NIC', '$Address', '$Email', '$DOB', '$Mobile','$Type')";
             
             mysqli_query($conn, $query);
             echo "<script type='text/javascript'>alert('Successfully Registered'); window.location.href = 'logIn.php';</script>";
@@ -84,12 +84,17 @@
                  </tr>
                  <tr>
                      <td><label><b>Already have an account:</b></label></td>
-                     <td><button class="button1" type="button" onclick="goToLogin()">Login</button><br></td>
+                     <td><button class="button1" type="button"  onclick="goToLogin()">Login</button><br></td>
                  </tr>
               </table> 
             </div1>
         
         </fieldset>
     </form>    
+    <script>
+    function goToLogin() {
+        window.location.href = 'login.php'; // Corrected 'login.php' to 'login.php'
+    }
+</script>
 </body>
 </html>

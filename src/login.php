@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <head>
 
   <meta charset="UTF-8">
-  <title>Daily UI | #001 - Sign Up</title>
+  <title>Sign Up</title>
   <link rel="stylesheet" href="./style/login.css" />
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -81,8 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
       </form>
 
-      <p>Already have an account? <a href="#">Sign up now</a></p>
-      <p><a href="#">Back to home</a></p>
+      <p>Already have an account? <a href="register.php">Sign up now</a></p>
     </div>
 
   </div>
