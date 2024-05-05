@@ -21,11 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
       header("location:adminPage.php");
       die;
     } else if ($user_data['user_type'] == 'pmanager') {
-      header("location:projectdashboard.php");
+      header("location: ./admin/projectDashboard.php");
       die;
     }
     else if ($user_data['user_type'] == 'engineer') {
-      header("location:taskdashboard.php");
+      header("location: ./admin/taskdashboard.php");
       die;
     }
     else if ($user_data['user_type'] == 'accountant') {
