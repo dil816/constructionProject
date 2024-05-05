@@ -23,7 +23,7 @@
 <div class="row">
     <div class="column">
         <div class="card">
-            <img src="./about1.jpeg" alt="Jane" style="width:100%" , height="70%">
+            <img src="./images/about1.jpeg" alt="Jane" style="width:100%" , height="70%">
             <div class="container">
                 <h2>Jane Doe</h2>
                 <p class="title">CEO & Founder</p>
@@ -36,7 +36,7 @@
 
     <div class="column">
         <div class="card">
-            <img src="./about2.jpeg" alt="Mike" style="width:100%" , height="70%">
+            <img src="./images/about2.jpeg" alt="Mike" style="width:100%" , height="70%">
             <div class="container">
                 <h2>Mike Ross</h2>
                 <p class="title">Art Director</p>
@@ -49,7 +49,7 @@
 
     <div class="column">
         <div class="card">
-            <img src="./about3.jpeg" alt="John" style="width:100%" , height="70%">
+            <img src="./images/about3.jpeg" alt="John" style="width:100%" , height="70%">
             <div class="container">
                 <h2>John Doe</h2>
                 <p class="title">Designer</p>
