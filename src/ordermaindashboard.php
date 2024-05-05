@@ -30,7 +30,7 @@
 
             </ul>
           </li>
-          <li><a href="aboutus.php">About us</a></li>
+          <li><a href="./aboutus.php">About us</a></li>
           <li><a href="communication.php">communication</a></li>
         </ul>
       </div>

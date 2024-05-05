@@ -104,8 +104,8 @@ $myArray = array(
                         </ul>
                     </details>
                 </li>
-                <li><a href="aboutus.php">About us</a></li>
-                <li><a href="communication.php">Comminication</a></li>
+                <li><a href="../aboutus.php">About us</a></li>
+                <li><a href="../communication.php">Comminication</a></li>
             </ul>
         </div>
         <div class="navbar-end">
