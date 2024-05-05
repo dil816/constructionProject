@@ -20,8 +20,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if ($user_data['user_type'] == 'admin') {
       header("location:adminPage.php");
       die;
-    } else if ($user_data['user_type'] == 'user') {
-      header("location:userprofile.php");
+    } else if ($user_data['user_type'] == 'pmanager') {
+      header("location:projectdashboard.php");
+      die;
+    }
+    else if ($user_data['user_type'] == 'engineer') {
+      header("location:taskdashboard.php");
+      die;
+    }
+    else if ($user_data['user_type'] == 'accountant') {
+      header("location:userdashboard.php");
+      die;
+    }
+    else if ($user_data['user_type'] == 'subcontracter') {
+      header("location:ordermaindashboard.php");
       die;
     }
   } else {
