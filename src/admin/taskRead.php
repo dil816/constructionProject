@@ -56,7 +56,7 @@ $result = $conn->query($sql);
     <br>
 
     <a href="taskCreate.php" class="btn1">Add Task</a>
-
+    <a href="taskDashboard.php" class="btn3">Dashboard</a>            
 </body>
 
 </html>

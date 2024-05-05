@@ -63,6 +63,7 @@ $result = $conn->query($sql);
     <br>
     <a href="projectCreate.php" class="btn1">Add Project</a>
     <a href="projectDocuments.php" class="btn2">view Plans</a>
+    <a href="projectDashboard.php" class="btn3">Dashboard</a>
 </body>
 
 </html>

@@ -112,4 +112,21 @@ tbody tr:hover {
   background-color: rgb(26, 16, 117);
   color: white;
 }
+
+.btn3 {
+  background-color: #00fff2;
+  color: black;
+  border: 2px solid #083152;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.btn3:hover,
+.btn3:active {
+  background-color: rgb(16, 85, 117);
+  color: white;
+}
 /**************/
