@@ -30,8 +30,8 @@
 
             </ul>
           </li>
-          <li><a href="aboutus.php">About us</a></li>
-          <li><a href="communication.php">communication</a></li>
+          <li><a href="logout.php" class="btn">Log Out</a></li>
+          <li><a href="communication.php"/>communication</li>
         </ul>
       </div>
       <a class="btn btn-ghost text-xl">MENDIS</a>
