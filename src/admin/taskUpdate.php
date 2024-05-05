@@ -45,14 +45,14 @@ if (isset($_GET['Task_ID'])) {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Add Task</title>
+            <title>Update Task</title>
             <link rel="stylesheet" type="text/css" href="../style/taskCreate.css">
         </head>
 
         <body>
             <div class="container">
                 <div class="left">
-                    <h2>Task Form</h2>
+                    <h2>Update Task Form</h2>
                     <form action="taskUpdate.php" method="post">
                         <input type="hidden" name="task_id" value="<?php echo $Task_ID; ?>">
                         <div class="form-group">

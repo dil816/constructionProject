@@ -12,6 +12,7 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Tasks</title>
     <link rel="stylesheet" href="../style/table.css">
+    <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
