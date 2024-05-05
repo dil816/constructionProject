@@ -21,11 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
       header("location:adminPage.php");
       die;
     } else if ($user_data['user_type'] == 'pmanager') {
-      header("location:projectdashboard.php");
+      header("location: ./admin/projectDashboard.php");
       die;
     }
     else if ($user_data['user_type'] == 'engineer') {
-      header("location:taskdashboard.php");
+      header("location: ./admin/taskdashboard.php");
       die;
     }
     else if ($user_data['user_type'] == 'accountant') {
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <head>
 
   <meta charset="UTF-8">
-  <title>Sign Up</title>
+  <title>Login</title>
   <link rel="stylesheet" href="./style/login.css" />
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
