@@ -86,8 +86,8 @@ $myArray = array(
 
                         </ul>
                     </li>
-                    <li><a>About us</a></li>
-                    <li><a>Comminication</a></li>
+                    <li><a href="aboutus.php">About us</a></li>
+                    <li><a href="communication.php">Comminication</a></li>
                 </ul>
             </div>
             <a class="btn btn-ghost text-xl">MENDIS</a>

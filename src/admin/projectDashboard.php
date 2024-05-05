@@ -104,8 +104,8 @@ $myArray = array(
                         </ul>
                     </details>
                 </li>
-                <li><a>About us</a></li>
-                <li><a>Comminication</a></li>
+                <li><a href="aboutus.php">About us</a></li>
+                <li><a href="communication.php">Comminication</a></li>
             </ul>
         </div>
         <div class="navbar-end">
@@ -159,7 +159,7 @@ $myArray = array(
                         <th>Client Name</th>
                         <th>Total Budget (M)</th>
                         <th>Client ContactNo</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
