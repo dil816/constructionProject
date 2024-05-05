@@ -109,7 +109,7 @@ $myArray = array(
             </ul>
         </div>
         <div class="navbar-end">
-            <a class="btn">Log Out</a>
+            <a class="btn" href="logout.php">Log Out</a>
         </div>
     </div>
 
