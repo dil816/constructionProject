@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Order Dashboard</title>
+  <title>Document</title>
   <link rel="stylesheet" href="./style/ordermaindashboard.css">
 
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.5/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -13,49 +13,49 @@
 </head>
 
 <body>
-  <div class="navbar bg-base-100">
-    <div class="navbar-start">
-      <div class="dropdown">
-        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-          </svg>
+<div class="navbar bg-base-100">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a>Home</a></li>
+                    <li>
+                        <a>Operation</a>
+                        <ul class="p-2">
+                            <li><a> Order Manage</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a>About us</a></li>
+                    <li><a>Comminication</a></li>
+                </ul>
+            </div>
+            <a class="btn btn-ghost text-xl">MENDIS</a>
         </div>
-        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-          <li><a>Home</a></li>
-          <li>
-            <a>Operation</a>
-            <ul class="p-2">
-              <li><a> Order Manage</a></li>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a>Home</a></li>
+                <li>
+                    <details>
+                        <summary>Operations</summary>
+                        <ul class="p-2">
+                            <li><a> Order Manage</a></li>
 
+                        </ul>
+                    </details>
+                </li>
+                <li><a href="aboutus.php">About us</a></li>
+                <li><a href="communication.php">Comminication</a></li>
             </ul>
-          </li>
-          <li><a href="aboutus.php">About us</a></li>
-          <li><a href="communication.php">communication</a></li>
-        </ul>
-      </div>
-      <a class="btn btn-ghost text-xl">MENDIS</a>
+        </div>
+        <div class="navbar-end">
+            <a class="btn" href="logout.php">Log Out</a>
+        </div>
     </div>
-    <div class="navbar-center hidden lg:flex">
-      <ul class="menu menu-horizontal px-1">
-        <li><a>Home</a></li>
-        <li>
-          <details>
-            <summary>Operations</summary>
-            <ul class="p-2">
-              <li><a> Order Manage</a></li>
-
-            </ul>
-          </details>
-        </li>
-        <li><a>About us</a></li>
-        <li><a>Comminication</a></li>
-      </ul>
-    </div>
-    <div class="navbar-end">
-      <a href="logout.php" class="btn">Log Out</a>
-    </div>
-  </div>
 
 
 

@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="navbar bg-base-100">
+<div class="navbar bg-base-100">
         <div class="navbar-start">
             <div class="dropdown">
                 <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -26,12 +26,12 @@
                     <li>
                         <a>Operation</a>
                         <ul class="p-2">
-                            <li><a> Profile Manager</a></li>
+                            <li><a> Order Manage</a></li>
 
                         </ul>
                     </li>
-                    <li><a href="aboutus.php">About us</a></li>
-                    <li><a href="communication.php">communication</a></li>
+                    <li><a>About us</a></li>
+                    <li><a>Comminication</a></li>
                 </ul>
             </div>
             <a class="btn btn-ghost text-xl">MENDIS</a>
@@ -43,17 +43,17 @@
                     <details>
                         <summary>Operations</summary>
                         <ul class="p-2">
-                            <li><a> Profile Manage</a></li>
+                            <li><a> Order Manage</a></li>
 
                         </ul>
                     </details>
                 </li>
-                <li><a>About us</a></li>
-                <li><a>Comminication</a></li>
+                <li><a href="aboutus.php">About us</a></li>
+                <li><a href="communication.php">Comminication</a></li>
             </ul>
         </div>
         <div class="navbar-end">
-            <a href="logout.php" class="btn">Log Out</a>
+            <a class="btn" href="logout.php">Log Out</a>
         </div>
     </div>
 
