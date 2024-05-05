@@ -132,7 +132,7 @@ $myArray = array(
                     <img src="../images/taskmanager.png" class="max-w-sm rounded-lg shadow-2xl" />
                     <div>
                         <h1 class="text-5xl font-bold">Project Manager Dashboard</h1>
-                        <a href="taskRead.php" class="btn1">Manage</a>
+                        <a href="projectRead.php" class="btn1">Manage</a>
                     </div>
                 </div>
             </div>
