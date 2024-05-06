@@ -78,7 +78,7 @@
                           
                           <option value="pmanager">Project Manager</option>
                           <option value="engineer">Engineer</option>
-                          <option value="accountant">Accountant</option>
+                          <option value="accountant">Admin</option>
                           <option value="subcontracter">Subcontracter</option>
                       </select>
                   </td>
